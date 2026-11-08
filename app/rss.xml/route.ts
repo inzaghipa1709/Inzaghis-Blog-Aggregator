@@ -1,5 +1,6 @@
 import { getArticles } from "@/lib/blogger/service";
-export const revalidate = 7200;
+export const revalidate = 14400;
+
 export async function GET() {
   const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   const posts = await getArticles();

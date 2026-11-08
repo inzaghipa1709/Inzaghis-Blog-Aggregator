@@ -1,7 +1,7 @@
 import { getSitemapArticles } from "@/lib/blogger/service";
 import { SitemapClient } from "./sitemap-client";
 
-export const revalidate = 7200;
+export const revalidate = 14400;
 
 export const metadata = {
   title: "Sitemap - All Blog Posts",

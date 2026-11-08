@@ -350,8 +350,7 @@ const normalize = (
   const fallbackCover = useMockCover
     ? mockArticles[i % mockArticles.length].cover
     : "";
-  let cover =
-    post.images?.[0]?.url || parsedCover || fallbackCover;
+  let cover = post.images?.[0]?.url || parsedCover || fallbackCover;
   if (cover && cover.startsWith("//")) {
     cover = `https:${cover}`;
   }
@@ -401,7 +400,7 @@ const fetchAllArticles = async (): Promise<Article[]> => {
 const getCachedAllArticles = unstable_cache(
   async (): Promise<Article[]> => fetchAllArticles(),
   ["all-articles"],
-  { revalidate: 3600, tags: ["articles"] },
+  { revalidate: 14400, tags: ["articles"] },
 );
 
 export async function getSitemapArticles(): Promise<Article[]> {
